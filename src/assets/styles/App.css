@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 html, body {
-  @apply bg-neutral-800;
+  @apply bg-bg-primary;
+  @apply dark:bg-bg-primary-dark;
   @apply font-satoshi;
 }
