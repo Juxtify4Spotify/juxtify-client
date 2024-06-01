@@ -1,11 +1,11 @@
 import "./assets/styles/App.css";
 import "./assets/styles/Fonts.css";
-import Navbar from "./components/Menu";
+import Menu from "./components/Menu";
 
 function App() {
   return (
     <div>
-      <Navbar />
+      <Menu />
     </div>
   );
 }

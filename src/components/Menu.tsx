@@ -1,4 +1,4 @@
-function Navbar() {
+function Menu() {
     return (
         <nav className="flex w-full h-16 px-4">
 
@@ -6,4 +6,4 @@ function Navbar() {
     );
 }
 
-export default Navbar;
+export default Menu;
