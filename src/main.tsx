@@ -1,5 +1,6 @@
 import "./assets/styles/App.css";
 import "./assets/styles/Fonts.css";
+import Menu from "./components/Menu";
 
 import React from "react";
 import ReactDOM from "react-dom/client";
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
+    <Menu />
     <RouterProvider router={router} />
   </React.StrictMode>,
 );

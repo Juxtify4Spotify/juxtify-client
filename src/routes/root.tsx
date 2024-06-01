@@ -1,9 +1,6 @@
-import Menu from "../components/Menu";
-
 function Root() {
   return (
     <div>
-      <Menu />
     </div>
   );
 }
