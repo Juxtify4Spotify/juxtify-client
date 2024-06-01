@@ -10,15 +10,15 @@ export default {
         'satoshi': ['"Satoshi"', 'sans-serif'] 
       },
       colors: {
-        'bg-main': {
+        'bg-primary': {
           dark: '#060606',
           DEFAULT: '#F0F0F0',
         },
-        'bg-primary': {
+        'bg-secondary': {
           dark: '#111111',
           DEFAULT: '#E5E5E5',
         },
-        'bg-secondary': {
+        'bg-tertiary': {
           dark: '#202020',
           DEFAULT: '#D6D6D6',
         },
