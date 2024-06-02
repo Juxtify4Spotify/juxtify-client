@@ -4,6 +4,7 @@ function Root() {
   const primaryCardColor = "#F6C8C9";
   const spotifyCards = [
     {
+      id: 1,
       title: "1989",
       tracksCount: 13,
       description:
@@ -13,6 +14,7 @@ function Root() {
         "https://dailymix-images.scdn.co/v2/img/ab6761610000e5ebe342e7294ed3dc27b167f47d/2/en/default",
     },
     {
+      id: 2,
       title: "Scorpion",
       tracksCount: 25,
       description:
@@ -22,6 +24,7 @@ function Root() {
         "https://dailymix-images.scdn.co/v2/img/ab6761610000e5ebe342e7294ed3dc27b167f47d/2/en/default",
     },
     {
+      id: 3,
       title: "Divide",
       tracksCount: 16,
       description:
@@ -31,6 +34,7 @@ function Root() {
         "https://dailymix-images.scdn.co/v2/img/ab6761610000e5ebe342e7294ed3dc27b167f47d/2/en/default",
     },
     {
+      id: 4,
       title: "Future Nostalgia",
       tracksCount: 11,
       description:
@@ -40,6 +44,7 @@ function Root() {
         "https://dailymix-images.scdn.co/v2/img/ab6761610000e5ebe342e7294ed3dc27b167f47d/2/en/default",
     },
     {
+      id: 5,
       title: "When We All Fall Asleep, Where Do We Go?",
       tracksCount: 14,
       description:
@@ -52,7 +57,7 @@ function Root() {
 
   return (
     <div className="px-8">
-      <h1 className="text-6xl py-10 dark:text-fg-primary-dark text-fg-primary">
+      <h1 className="py-10 text-6xl dark:text-fg-primary-dark text-fg-primary">
         Juxtify
       </h1>
       <div className="pt-20 gap-[15px] flex flex-col">
@@ -61,7 +66,7 @@ function Root() {
         </h2>
         <div className="flex gap-[11px] overflow-x-scroll">
           {spotifyCards.map((card) => (
-            <Card {...card} />
+            <Card key={card.id} {...card} />
           ))}
         </div>
       </div>
