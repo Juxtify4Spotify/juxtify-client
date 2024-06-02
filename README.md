@@ -2,9 +2,11 @@
 
 Juxtify is an alternative interface for Spotify, based off [Juxtopposed's YouTube Video](https://www.youtube.com/watch?v=suhEIUapSJQ) redesigning the platform.
 
-This is a heavy W.I.P. and is not yet ready for use. Juxtify is built with [React](https://react.dev/) and [Typescript](https://www.typescriptlang.org/) on top of [Tauri](https://tauri.app/) for multiplatform compatibility.
+**This is a heavy W.I.P. and is not yet ready for use.** Juxtify is built with [React](https://react.dev/) and [Typescript](https://www.typescriptlang.org/) on top of [Tauri](https://tauri.app/) for multiplatform compatibility.
 
-## How to install
+**Please follow these steps if you plan to contribute to the project.**
+
+## How to install the development version
 
 Follow these instructions to setup your development environment:
 
@@ -14,7 +16,7 @@ cd juxtify
 npm install
 ```
 
-## How to run locally
+## How to run the devlopment version locally
 
 ### Browser
 
