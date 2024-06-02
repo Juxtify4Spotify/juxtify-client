@@ -18,11 +18,11 @@
   .dark {
     --background: #060606;
     --foreground: #E0E0E0;
-    --primary: #060606;
+    --primary: #111111;
     --primary-foreground: #6E6E6E;
-    --secondary: #111111;
+    --secondary: #202020;
     --secondary-foreground: #6E6E6E;
-    --tertiary: #202020;
+    --tertiary: #323232;
     --tertiary-foreground: #6E6E6E;
     --accent: #1ED760;
   }
