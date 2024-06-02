@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #F0F0F0;
+    --foreground: #1A1A1A;
+    --primary: #F0F0F0;
+    --primary-foreground: #1A1A1A;
+    --secondary: #E5E5E5;
+    --secondary-foreground: #1A1A1A;
+    --tertiary: #D6D6D6;
+    --tertiary-foreground: #1A1A1A;
+    --accent: #1ED760;
+  }
+
+  .dark {
+    --background: #060606;
+    --foreground: #E0E0E0;
+    --primary: #060606;
+    --primary-foreground: #6E6E6E;
+    --secondary: #111111;
+    --secondary-foreground: #6E6E6E;
+    --tertiary: #202020;
+    --tertiary-foreground: #6E6E6E;
+    --accent: #1ED760;
+  } 
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    @apply font-satoshi;
+  }
+}
