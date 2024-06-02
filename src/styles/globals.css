@@ -25,10 +25,12 @@
     --tertiary: #202020;
     --tertiary-foreground: #6E6E6E;
     --accent: #1ED760;
-  } 
-}
+  }
 
-@layer base {
+  html, body, #root {
+    @apply h-full;
+  }
+
   body {
     @apply bg-background text-foreground;
     @apply font-satoshi;
