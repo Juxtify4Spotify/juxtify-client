@@ -44,6 +44,19 @@ function Root() {
           }
         ]
       }
+    },
+    {
+      title: "Discover Weekly",
+      tracksCount: 30,
+      primaryColor: "#F090B8",
+      variations: {
+        'kanskje': [
+          {
+            description: "Your weekly mixtape of fresh music. Enjoy new music and deep cuts picked for you. Updates every Monday.",
+            imageUrl: "/src/assets/artworks/discover-weekly-kanskje.png"
+          }
+        ]
+      }
     }
   ]
 
