@@ -1,5 +1,5 @@
 import './styles/globals.css'
-import './styles/font.css'
+import './styles/fonts.css'
 import Menu from "./components/Menu";
 
 import React from "react";
