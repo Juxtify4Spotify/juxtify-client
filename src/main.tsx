@@ -20,12 +20,12 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <div className="flex flex-col h-full">
-        <Header />
+      <div className="flex h-full gap-2 p-2">
+        <Sidebar />
         <div className="flex flex-1">
-          <Sidebar />
-          <div className="flex flex-col flex-1">
-            <main className="flex-1 overflow-auto">
+          <div className="flex flex-col flex-1 gap-2">
+            <Header />
+            <main className="flex-1 overflow-auto border rounded-xl border-secondary">
               <RouterProvider router={router} />
             </main>
             <PlaybackControlBar />
