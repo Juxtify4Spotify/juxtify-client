@@ -18,11 +18,11 @@ export default function Card({
       <div className="max-h-[170px] w-full h-full gap-[2px] flex flex-col">
         <div
           style={{ backgroundColor: primaryColor }}
-          className="w-full h-[6px] mx-auto opacity-15 bg-fg-primary-dark max-w-[133px] rounded-md rounded-b-none"
+          className="w-full h-[6px] mx-auto opacity-15 bg-primary-foreground max-w-[133px] rounded-md rounded-b-none"
         />
         <div
           style={{ backgroundColor: primaryColor }}
-          className="w-full h-[9px] opacity-30 bg-fg-primary-dark max-w-[154px] mx-auto rounded-md rounded-b-none"
+          className="w-full h-[9px] opacity-30 bg-primary-foreground max-w-[154px] mx-auto rounded-md rounded-b-none"
         />
         <img
           className="w-full h-full max-h-[154px] mx-auto rounded-md"
@@ -30,7 +30,7 @@ export default function Card({
         />
       </div>
       <div className="flex justify-between">
-        <div className="dark:text-fg-primary-dark text-fg-primary whitespace-nowrap truncate pb-2">
+        <div className="pb-2 truncate text-primary-foreground whitespace-nowrap">
           {title}
         </div>
         {tracksCount && (
@@ -39,7 +39,7 @@ export default function Card({
           </div>
         )}
       </div>
-      <p className="dark:text-fg-secondary text-fg-secondary-dark line-clamp-2">
+      <p className="text-secondary-foreground line-clamp-2">
         {description}
       </p>
     </article>

@@ -1,9 +1,0 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-html, body {
-  @apply bg-bg-primary;
-  @apply dark:bg-bg-primary-dark;
-  @apply font-satoshi;
-}

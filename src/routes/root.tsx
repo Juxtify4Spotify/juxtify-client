@@ -52,11 +52,11 @@ function Root() {
 
   return (
     <div className="px-8">
-      <h1 className="text-6xl py-10 dark:text-fg-primary-dark text-fg-primary">
+      <h1 className="py-10 text-6xl text-primary-foreground">
         Juxtify
       </h1>
       <div className="pt-20">
-        <h2 className="text-fg-primary font-semibold font-satoshi tracking-[0.03rem] sm:text-xl dark:text-fg-primary-dark">
+        <h2 className="text-primary-foreground font-semibold font-satoshi tracking-[0.03rem] sm:text-xl">
           Made For You
         </h2>
         <div className="flex gap-4 overflow-x-scroll">
