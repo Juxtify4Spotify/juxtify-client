@@ -14,7 +14,7 @@ export default function Card({
   imageUrl,
 }: CardProps) {
   return (
-    <article className="max-w-[170px] shrink-0">
+    <article className="max-w-[170px] min-h-[260px] shrink-0">
       <div className="max-h-[181px] w-full h-full gap-[2px] flex flex-col mb-[8px]">
         <div
           style={{ backgroundColor: primaryColor }}
@@ -25,7 +25,7 @@ export default function Card({
           className="w-full h-[9px] opacity-30 bg-primary-foreground max-w-[154px] mx-auto rounded-md rounded-b-none"
         />
         <img
-          className="w-full h-[170px] mx-auto rounded-md"
+          className="w-[170px] h-[170px] mx-auto rounded-md"
           src={imageUrl}
         />
       </div>
