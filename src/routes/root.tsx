@@ -60,11 +60,9 @@ function Root() {
     }
   ]
 
-
-
   return (
     <div className="px-8">
-      <h1 className="text-6xl py-10 dark:text-fg-primary-dark text-fg-primary">
+      <h1 className="py-10 text-6xl dark:text-fg-primary-dark text-fg-primary">
         Juxtify
       </h1>
       <div className="pt-20 gap-[15px] flex flex-col">
