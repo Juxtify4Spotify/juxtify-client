@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'satoshi': ['"Satoshi"', 'sans-serif'] 
+        'satoshi': ['"Satoshi"', '"Noto Sans JP"', 'sans-serif'] 
       },
       colors: {
         background: "var(--background)",

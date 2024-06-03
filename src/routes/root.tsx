@@ -1,55 +1,64 @@
 import Card from "../components/Card";
 
 function Root() {
-  const primaryCardColor = "#F6C8C9";
-  const spotifyCards = [
+  const users = ["kanskje"]
+  const user = users[Math.floor(Math.random() * users.length)]
+  type CardVariation = {
+    description: string
+    imageUrl: string
+  }
+  type VariableCard = {
+    title: string
+    tracksCount: number
+    primaryColor: string
+    variations: {
+      [key: string]: CardVariation[]
+    }
+  }
+  const spotifyCards: VariableCard[] = [
     {
-      variant: "playlist",
-      title: "1989",
-      tracksCount: 13,
-      description:
-        "Taylor Swift's fifth studio album, featuring hits like 'Shake It Off' and 'Blank Space'.",
-      primaryColor: primaryCardColor,
-      imageUrl:
-        "https://dailymix-images.scdn.co/v2/img/ab6761610000e5ebe342e7294ed3dc27b167f47d/2/en/default",
+      title: "Daily Mix 1",
+      tracksCount: 50,
+      primaryColor: "#5DC6F6",
+      variations: {
+        'kanskje': [
+          {
+            description: "はるまきごはん, ぬゆり, VocaloKAT and more",
+            imageUrl: "/src/assets/artworks/daily1-kanskje-01.png"
+          },
+          {
+            description: "原口沙輔, 柊マグネタイト, 柊キライ and more",
+            imageUrl: "/src/assets/artworks/daily1-kanskje-02.png"
+          },
+          {
+            description: "ハチ, Neru, Giga and more",
+            imageUrl: "/src/assets/artworks/daily1-kanskje-03.png"
+          },
+          {
+            description: "てにをは, バルーン, 和田たけあき, and more",
+            imageUrl: "/src/assets/artworks/daily1-kanskje-04.png"
+          },
+          {
+            description: "sasakure.UK, Toa, 40mP and more",
+            imageUrl: "/src/assets/artworks/daily1-kanskje-05.png"
+          }
+        ]
+      }
     },
     {
-      variant: "folder",
-      title: "Scorpion",
-      tracksCount: 25,
-      description:
-        "Drake's fifth studio album, a double album with one side dedicated to rap and the other to R&B.",
-      primaryColor: primaryCardColor,
-      imageUrl:
-        "https://dailymix-images.scdn.co/v2/img/ab6761610000e5ebe342e7294ed3dc27b167f47d/2/en/default",
-    },
-    {
-      variant: "dailyMix",
-      title: "Divide",
-      tracksCount: 16,
-      description:
-        "Ed Sheeran's third studio album, featuring hits like 'Shape of You' and 'Castle on the Hill'.",
-      primaryColor: primaryCardColor,
-      imageUrl:
-        "https://dailymix-images.scdn.co/v2/img/ab6761610000e5ebe342e7294ed3dc27b167f47d/2/en/default",
-    },
-    {
-      variant: "album",
-      title: "Abbey Road",
-      tracksCount: 11,
-      description: "The beatles",
-      primaryColor: primaryCardColor,
-      imageUrl:
-        "https://i.scdn.co/image/ab67616d00001e02dc30583ba717007b00cceb25",
-    },
-    {
-      variant: "artist",
-      title: "Billie Eilish",
-      primaryColor: primaryCardColor,
-      imageUrl:
-        "https://dailymix-images.scdn.co/v2/img/ab6761610000e5ebe342e7294ed3dc27b167f47d/2/en/default",
-    },
-  ];
+      title: "Discover Weekly",
+      tracksCount: 30,
+      primaryColor: "#F090B8",
+      variations: {
+        'kanskje': [
+          {
+            description: "Your weekly mixtape of fresh music. Enjoy new music and deep cuts picked for you. Updates every Monday.",
+            imageUrl: "/src/assets/artworks/discover-weekly-kanskje.png"
+          }
+        ]
+      }
+    }
+  ]
 
   return (
     <div className="px-8">
@@ -61,9 +70,11 @@ function Root() {
           Made For You
         </h2>
         <div className="flex gap-[11px] overflow-x-scroll">
-          {spotifyCards.map((card) => (
-            <Card {...card} />
-          ))}
+        {spotifyCards.map((card, index) => {
+            const variationsSelection = card.variations[user];
+            const randomVariation = variationsSelection[Math.floor(Math.random() * variationsSelection.length)];
+            return <Card key={index} {...card} {...randomVariation} />;
+          })}
         </div>
       </div>
     </div>

@@ -18,7 +18,7 @@ export default function Card({
 }: CardProps) {
  
   return (
-    <article className="max-w-[170px] shrink-0">
+    <article className="max-w-[170px] min-h-[260px] shrink-0">
       <div className="max-h-[181px] w-full h-full gap-[2px] flex flex-col mb-[8px]">
       { (variant === "folder" || variant === "album") && (
         <div
