@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
@@ -28,4 +28,13 @@ export default {
     },
   },
   plugins: [],
+  safelist: generateColorSafelist(['background', 'foreground', 'primary', 'primary-foreground', 'secondary', 'secondary-foreground', 'tertiary', 'tertiary-foreground', 'accent'])
+}
+
+function generateColorSafelist(colorNames) {
+  const safelist = [];
+  colorNames.forEach(color => {
+    safelist.push(`stroke-${color}`, `fill-${color}`);
+  });
+  return safelist;
 }
