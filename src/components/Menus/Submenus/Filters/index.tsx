@@ -28,7 +28,7 @@ export default function FiltersSubmenu() {
     <div className="flex gap-4">
       {filters.map(({ title }, index) => (
         <CategoryFilter
-          key={`titke-${index}`}
+          key={`title-${index}`}
           title={title}
           active={title === activeFilter}
           onClick={() => handleFilterClick(title)}
