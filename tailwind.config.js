@@ -1,12 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  darkMode: "selector",
   theme: {
     extend: {
       fontFamily: {
-        'satoshi': ['"Satoshi"', '"Noto Sans JP"', 'sans-serif'] 
+        satoshi: ['"Satoshi"', '"Noto Sans JP"', "sans-serif"],
       },
       colors: {
         background: "var(--background)",
@@ -23,17 +22,27 @@ module.exports = {
           DEFAULT: "var(--tertiary)",
           foreground: "var(--tertiary-foreground)",
         },
-        accent: "var(--accent)"
+        accent: "var(--accent)",
       },
     },
   },
   plugins: [],
-  safelist: generateColorSafelist(['background', 'foreground', 'primary', 'primary-foreground', 'secondary', 'secondary-foreground', 'tertiary', 'tertiary-foreground', 'accent'])
-}
+  safelist: generateColorSafelist([
+    "background",
+    "foreground",
+    "primary",
+    "primary-foreground",
+    "secondary",
+    "secondary-foreground",
+    "tertiary",
+    "tertiary-foreground",
+    "accent",
+  ]),
+};
 
 function generateColorSafelist(colorNames) {
   const safelist = [];
-  colorNames.forEach(color => {
+  colorNames.forEach((color) => {
     safelist.push(`stroke-${color}`, `fill-${color}`);
   });
   return safelist;

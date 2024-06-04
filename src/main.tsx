@@ -1,12 +1,12 @@
-import './styles/globals.css'
-import './styles/fonts.css'
-import Menu from "./components/Menu";
+import "./styles/globals.css";
+import "./styles/fonts.css";
+import Menu from "./components/Menus";
 
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/root";
-import { ThemeProvider } from './components/Theme/theme-provider';
+import { ThemeProvider } from "./components/Theme/theme-provider";
 
 const router = createBrowserRouter([
   {
