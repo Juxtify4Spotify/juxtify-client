@@ -3,9 +3,15 @@
     <div class="flex justify-between h-full">
       <div class="pr-2 flex-grow">
         <div :class="['h-full w-full rounded-md', isLibraryRoute ? 'bg-secondary' : 'text-secondary-foreground']">
-          <div @click="navigateToLibrary" class="flex gap-2 items-center select-none hover:text-foreground p-2 cursor-pointer">
-            <component :is="currentIcon" />
-            <p>My Library</p>
+          <div @click="navigateToLibrary" class="group flex justify-between items-center select-none hover:text-foreground p-2 cursor-pointer">
+            <div class="flex gap-2 items-center">
+              <component :is="currentIcon" />
+              <p>My Library</p>
+            </div>
+            <div class="hidden group-hover:flex text-secondary-foreground gap-2">
+              <More />
+              <AddSimple />
+            </div>
           </div>
           <Drag class="cursor-ew-resize text-tertiary absolute top-[50%] right-0" @mousedown.prevent="startResize"/>
         </div>
@@ -20,12 +26,16 @@ import { useRoute, useRouter } from 'vue-router';
 import Drag from '/src/assets/icons/move2.svg';
 import Library from '/src/assets/icons/library.svg';
 import LibraryFilled from '/src/assets/icons/library-filled.svg';
+import More from '/src/assets/icons/more.svg';
+import AddSimple from '/src/assets/icons/add-simple.svg';
 
 export default {
   components: {
     Drag,
     Library,
-    LibraryFilled
+    LibraryFilled,
+    More,
+    AddSimple
   },
   setup() {
     const route = useRoute();
