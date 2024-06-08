@@ -3,7 +3,7 @@
     <div class="flex justify-between h-full">
       <div class="pr-2 flex-grow">
         <div :class="['h-full w-full rounded-md', isLibraryRoute ? 'bg-secondary' : 'text-secondary-foreground']">
-          <div @click="navigateToLibrary" class="flex gap-2 items-center hover:text-foreground p-2 cursor-pointer">
+          <div @click="navigateToLibrary" class="flex gap-2 items-center select-none hover:text-foreground p-2 cursor-pointer">
             <component :is="currentIcon" />
             <p>My Library</p>
           </div>
@@ -65,7 +65,7 @@ export default {
       };
 
       const stopResize = () => {
-        document.body.classList.remove('select-all');
+        document.body.classList.remove('select-none');
         window.removeEventListener('mousemove', doResize);
         window.removeEventListener('mouseup', stopResize);
       };

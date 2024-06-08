@@ -1,6 +1,6 @@
 <template>
   <div class="hidden lg:flex p-2 h-screen">
-    <Sidebar class=""></Sidebar>
+    <Sidebar></Sidebar>
     <div class="flex flex-col flex-1">
       <Menu></Menu>
 
