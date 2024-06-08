@@ -1,22 +1,28 @@
 <template>
   <div class="hidden lg:flex p-2 h-screen">
-    <Sidebar></Sidebar>
+    <SidebarDesktop></SidebarDesktop>
     <div class="flex flex-col flex-1">
-      <Menu></Menu>
+      <MenuDesktop></MenuDesktop>
 
       <div class="w-full h-full rounded-md outline -outline-offset-1 outline-1 outline-tertiary"></div>
     </div>
   </div>
+  <div class="flex lg:hidden h-screen">
+    <MenuMobile></MenuMobile>
+  </div>
 </template>
 
 <script>
-import Menu from './components/Menu.vue'
-import Sidebar from './components/Sidebar.vue';
+import MenuDesktop from './components/desktop/Menu.vue';
+import SidebarDesktop from './components/desktop/Sidebar.vue';
+
+import MenuMobile from './components/mobile/Menu.vue';
 
 export default {
   components: {
-    Menu,
-    Sidebar
+    MenuDesktop,
+    SidebarDesktop,
+    MenuMobile
   },
 };
 </script>

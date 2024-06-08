@@ -4,8 +4,9 @@
 
 @layer base {
     #app {
-      @apply h-screen; @apply w-screen;
-      @apply bg-background text-foreground;
+      @apply h-screen w-screen;
+      @apply bg-secondary lg:bg-background;
+      @apply text-foreground;
       @apply font-satoshi;
     }
   }

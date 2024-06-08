@@ -1,12 +1,12 @@
 <template>
     <div class="h-16 pb-2 flex justify-between gap-2">
         <div class="flex flex-grow">
-            <div :class="['flex h-full gap-2 rounded-md w-full select-none min-w-36 max-w-72 hover:cursor-pointer items-center hover:text-foreground p-2', route.path === '/' ? 'bg-secondary' : 'text-secondary-foreground']"
+            <div :class="['flex h-full gap-2 rounded-md w-full select-none min-w-30 max-w-72 hover:cursor-pointer items-center hover:text-foreground p-2', route.path === '/' ? 'bg-secondary' : 'text-secondary-foreground']"
                 @click="navigate('/')">
                 <component :is="route.path === '/' ? HomeFilled : Home" />
                 <p>Home</p>
             </div>
-            <div :class="['flex h-full gap-2 rounded-md w-full select-none min-w-36 max-w-72 hover:cursor-pointer items-center hover:text-foreground p-2', route.path === '/discover' ? 'bg-secondary' : 'text-secondary-foreground']"
+            <div :class="['flex h-full gap-2 rounded-md w-full select-none min-w-30 max-w-72 hover:cursor-pointer items-center hover:text-foreground p-2', route.path === '/discover' ? 'bg-secondary' : 'text-secondary-foreground']"
                 @click="navigate('/discover')">
                 <component :is="route.path === '/discover' ? DiscoverFilled : Discover" />
                 <p>Discover</p>
