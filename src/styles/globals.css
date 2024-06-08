@@ -10,3 +10,7 @@
       @apply font-satoshi;
     }
   }
+
+body {
+  @apply overflow-hidden;
+}
