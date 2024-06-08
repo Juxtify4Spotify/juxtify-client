@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    #app {
+      @apply h-screen; @apply w-screen;
+      @apply bg-background text-foreground;
+      @apply font-satoshi;
+    }
+  }
