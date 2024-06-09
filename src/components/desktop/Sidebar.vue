@@ -9,88 +9,64 @@
               <p>My Library</p>
             </div>
             <div class="hidden group-hover:flex text-secondary-foreground gap-2">
-              <More />
-              <AddSimple />
+              <component :is="'MoreIcon'" />
+              <component :is="'AddSimpleIcon'" />
             </div>
           </div>
-          <Drag class="cursor-ew-resize text-tertiary absolute top-[50%] right-0" @mousedown.prevent="startResize"/>
+          <component :is="'Move2Icon'" class="cursor-ew-resize text-tertiary absolute top-[50%] right-0" @mousedown.prevent="startResize"/>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script>
+<script setup>
 import { ref, computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import Drag from '/src/assets/icons/move2.svg';
-import Library from '/src/assets/icons/library.svg';
-import LibraryFilled from '/src/assets/icons/library-filled.svg';
-import More from '/src/assets/icons/more.svg';
-import AddSimple from '/src/assets/icons/add-simple.svg';
 
-export default {
-  components: {
-    Drag,
-    Library,
-    LibraryFilled,
-    More,
-    AddSimple
-  },
-  setup() {
-    const route = useRoute();
-    const router = useRouter();
+const route = useRoute();
+const router = useRouter();
 
-    const sidebarWidth = ref(300);
-    const minSidebarWidth = 250;
-    const maxSidebarWidth = 500;
+const sidebarWidth = ref(300);
+const minSidebarWidth = 250;
+const maxSidebarWidth = 500;
 
-    const isLibraryRoute = computed(() => route.path === '/library');
-    const currentIcon = computed(() => isLibraryRoute.value ? 'LibraryFilled' : 'Library');
+const isLibraryRoute = computed(() => route.path === '/library');
+const currentIcon = computed(() => isLibraryRoute.value ? 'LibraryFilledIcon' : 'LibraryIcon');
 
-    const navigateToLibrary = () => {
-      if (!isLibraryRoute.value) {
-        router.push('/library');
-      }
-    };
+const navigateToLibrary = () => {
+  if (!isLibraryRoute.value) {
+    router.push('/library');
+  }
+};
 
-    const startResize = (event) => {
-      document.body.classList.add('select-none');
-      const initialWidth = sidebarWidth.value;
-      const startX = event.clientX;
+const startResize = (event) => {
+  document.body.classList.add('select-none');
+  const initialWidth = sidebarWidth.value;
+  const startX = event.clientX;
 
-      const doResize = (moveEvent) => {
-        moveEvent.preventDefault();
-        const currentX = moveEvent.clientX;
-        const offset = currentX - startX;
-        let newWidth = initialWidth + offset;
+  const doResize = (moveEvent) => {
+    moveEvent.preventDefault();
+    const currentX = moveEvent.clientX;
+    const offset = currentX - startX;
+    let newWidth = initialWidth + offset;
 
-        if (newWidth < minSidebarWidth) {
-          newWidth = minSidebarWidth;
-        } else if (newWidth > maxSidebarWidth) {
-          newWidth = maxSidebarWidth;
-        }
+    if (newWidth < minSidebarWidth) {
+      newWidth = minSidebarWidth;
+    } else if (newWidth > maxSidebarWidth) {
+      newWidth = maxSidebarWidth;
+    }
 
-        sidebarWidth.value = newWidth;
-      };
+    sidebarWidth.value = newWidth;
+  };
 
-      const stopResize = () => {
-        document.body.classList.remove('select-none');
-        window.removeEventListener('mousemove', doResize);
-        window.removeEventListener('mouseup', stopResize);
-      };
+  const stopResize = () => {
+    document.body.classList.remove('select-none');
+    window.removeEventListener('mousemove', doResize);
+    window.removeEventListener('mouseup', stopResize);
+  };
 
-      window.addEventListener('mousemove', doResize);
-      window.addEventListener('mouseup', stopResize);
-    };
-
-    return {
-      sidebarWidth,
-      isLibraryRoute,
-      currentIcon,
-      navigateToLibrary,
-      startResize
-    };
-  },
+  window.addEventListener('mousemove', doResize);
+  window.addEventListener('mouseup', stopResize);
 };
 </script>
