@@ -1,31 +1,31 @@
-import { useState } from "react";
-import CategoryFilter from "../../../Filters/Category";
+import { useState } from 'react';
+import CategoryFilter from '../../../Filters/Category';
 
 export default function FiltersSubmenu() {
-  const [activeFilter, setActiveFilter] = useState("All");
+  const [activeFilter, setActiveFilter] = useState('All');
   const filters = [
     {
-      title: "All",
+      title: 'All',
     },
     {
-      title: "Music",
+      title: 'Music',
     },
     {
-      title: "Podcasts",
+      title: 'Podcasts',
     },
-    { title: "Audiobooks" },
+    { title: 'Audiobooks' },
   ];
 
   const handleFilterClick = (title: string) => {
     if (title === activeFilter) {
-      setActiveFilter("All");
+      setActiveFilter('All');
       return;
     }
     setActiveFilter(title);
   };
 
   return (
-    <div className="flex gap-4">
+    <div className='flex gap-4'>
       {filters.map(({ title }, index) => (
         <CategoryFilter
           key={`title-${index}`}

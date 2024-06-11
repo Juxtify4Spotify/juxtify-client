@@ -1,11 +1,7 @@
-import { useTheme } from "./theme-provider"
+import { useTheme } from './theme-provider';
 
 export function ThemeToggle() {
-    const { setTheme } = useTheme()
+  const { setTheme } = useTheme();
 
-    return(
-        <button onClick={() => setTheme("system")}>
-            Toggle
-        </button>
-    )
+  return <button onClick={() => setTheme('system')}>Toggle</button>;
 }

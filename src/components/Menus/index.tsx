@@ -1,14 +1,14 @@
-import Discover from "../../assets/icons/discover.svg?react";
+import Discover from '../../assets/icons/discover.svg?react';
 
 function Menu() {
-    return (
-        <nav className="font-medium flex w-full h-20 p-2">
-            <div className="flex text-foreground h-full w-72 p-4 bg-secondary gap-3 items-center rounded-lg">
-                <Discover className="text-foreground" />
-                <p>Discover</p>
-            </div>
-        </nav>
-    );
+  return (
+    <nav className='flex h-20 w-full p-2 font-medium'>
+      <div className='flex h-full w-72 items-center gap-3 rounded-lg bg-secondary p-4 text-foreground'>
+        <Discover className='text-foreground' />
+        <p>Discover</p>
+      </div>
+    </nav>
+  );
 }
 
 export default Menu;

@@ -1,6 +1,5 @@
-
 interface CardProps {
-  variant: "folder" | "playlist" | "dailyMix" | "album" | "artist" | string;
+  variant: 'folder' | 'playlist' | 'dailyMix' | 'album' | 'artist' | string;
   title: string;
   tracksCount?: number;
   description: string;
@@ -12,54 +11,53 @@ export default function Card({
   variant,
   title,
   tracksCount,
-  primaryColor = "",
+  primaryColor = '',
   description,
   imageUrl,
 }: CardProps) {
- 
   return (
-    <article className="max-w-[170px] min-h-[260px] shrink-0">
-      <div className="max-h-[181px] w-full h-full gap-[2px] flex flex-col mb-[8px]">
-      { (variant === "folder" || variant === "album") && (
-        <div
-          style={{ backgroundColor: primaryColor }}
-          className={`${
-            variant === "album" ? "w-full" : "w-20"
-          } h-[9px] opacity-30 bg-primary-foreground max-w-[154px] ml-2 rounded-md rounded-b-none`}
-        />
-      )}
+    <article className='min-h-[260px] max-w-[170px] shrink-0'>
+      <div className='mb-[8px] flex h-full max-h-[181px] w-full flex-col gap-[2px]'>
+        {(variant === 'folder' || variant === 'album') && (
+          <div
+            style={{ backgroundColor: primaryColor }}
+            className={`${
+              variant === 'album' ? 'w-full' : 'w-20'
+            } ml-2 h-[9px] max-w-[154px] rounded-md rounded-b-none bg-primary-foreground opacity-30`}
+          />
+        )}
 
-        {variant !== "artist" && variant !== "folder"  && variant !== "album" && (
+        {variant !== 'artist' && variant !== 'folder' && variant !== 'album' && (
           <>
             <div
               style={{ backgroundColor: primaryColor }}
-              className="w-full h-[6px] mx-auto opacity-15 bg-primary-foreground max-w-[133px] rounded-md rounded-b-none"
+              className='mx-auto h-[6px] w-full max-w-[133px] rounded-md rounded-b-none bg-primary-foreground opacity-15'
             />
             <div
               style={{ backgroundColor: primaryColor }}
-              className="w-full h-[9px] opacity-30 bg-primary-foreground max-w-[154px] mx-auto rounded-md rounded-b-none"
+              className='mx-auto h-[9px] w-full max-w-[154px] rounded-md rounded-b-none bg-primary-foreground opacity-30'
             />
           </>
         )}
         <img
-          className={`w-full h-[170px] mx-auto rounded-md ${variant === "artist" ? "rounded-full" : ""}`}
+          className={`mx-auto h-[170px] w-full rounded-md ${variant === 'artist' ? 'rounded-full' : ''}`}
           src={imageUrl}
           alt={title}
         />
       </div>
-      <div className={`flex justify-between ${variant === "artist" ? "justify-center" : ""}`}>
-        <div className={`pb-2 truncate text-primary-foreground-dark whitespace-nowrap ${variant === "artist" ? "text-center w-full" : ""}`}>
+      <div className={`flex justify-between ${variant === 'artist' ? 'justify-center' : ''}`}>
+        <div
+          className={`text-primary-foreground-dark truncate whitespace-nowrap pb-2 ${variant === 'artist' ? 'w-full text-center' : ''}`}
+        >
           {title}
         </div>
-        {tracksCount && variant !== "artist" && (
-          <div className="font-light" style={{ color: primaryColor }}>
+        {tracksCount && variant !== 'artist' && (
+          <div className='font-light' style={{ color: primaryColor }}>
             {tracksCount}
           </div>
         )}
       </div>
-      <p className="text-secondary-foreground line-clamp-2 text-[12px]">
-        {description}
-      </p>
+      <p className='line-clamp-2 text-[12px] text-secondary-foreground'>{description}</p>
     </article>
   );
 }
