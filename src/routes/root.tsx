@@ -1,4 +1,5 @@
 import Card from '../components/Card';
+import Dropdown from '../components/Dropdown';
 import FiltersSubmenu from '../components/Menus/Submenus/Filters';
 
 function Root() {
@@ -62,6 +63,13 @@ function Root() {
     },
   ];
 
+  const dropdownCards= spotifyCards.map((card, index) => {
+    const variationsSelection = card.variations[user];
+    const randomVariation =
+      variationsSelection[Math.floor(Math.random() * variationsSelection.length)];
+    return <Card variant={''} key={index} {...card} {...randomVariation} />;
+  })
+
   return (
     <div className='px-8'>
       <h1 className='dark:text-fg-primary-dark text-fg-primary py-10 text-6xl'>Juxtify</h1>
@@ -79,6 +87,8 @@ function Root() {
           })}
         </div>
       </div>
+      
+      <Dropdown title='Playlist by Spotify' initialCollapsed={false} items={dropdownCards}></Dropdown>
     </div>
   );
 }
