@@ -63,12 +63,12 @@ function Root() {
     },
   ];
 
-  const dropdownCards= spotifyCards.map((card, index) => {
+  const dropdownCards = spotifyCards.map((card, index) => {
     const variationsSelection = card.variations[user];
     const randomVariation =
       variationsSelection[Math.floor(Math.random() * variationsSelection.length)];
     return <Card variant={''} key={index} {...card} {...randomVariation} />;
-  })
+  });
 
   return (
     <div className='px-8'>
@@ -87,8 +87,12 @@ function Root() {
           })}
         </div>
       </div>
-      
-      <Dropdown title='Playlist by Spotify' initialCollapsed={false} items={dropdownCards}></Dropdown>
+
+      <Dropdown
+        title='Playlist by Spotify'
+        initialCollapsed={false}
+        items={dropdownCards}
+      ></Dropdown>
     </div>
   );
 }
