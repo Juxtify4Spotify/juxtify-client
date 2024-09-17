@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Root from './routes/root';
 import { ThemeProvider } from './components/Theme/theme-provider';
+import Sidebar from './components/Sidebar';
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
       <Menu />
-      <RouterProvider router={router} />
+      <Sidebar>
+        <RouterProvider router={router} />
+      </Sidebar>
     </ThemeProvider>
   </React.StrictMode>,
 );
