@@ -11,7 +11,7 @@ Juxtify is an alternative interface for Spotify, based off [Juxtopposed's YouTub
 Follow these instructions to setup your development environment:
 
 ```bash
-git clone https://github.com/Juxtify4Spotify/juxtify
+git clone https://github.com/Juxtify4Spotify/juxtify-client
 cd juxtify
 npm install
 ```
@@ -28,7 +28,7 @@ npm run dev
 
 ### Natively
 
-To run it as a native app you need to first install [rust](https://www.rust-lang.org/tools/install) then run the following commands:
+To run it as a native app you need to first install [Rust](https://www.rust-lang.org/tools/install) then run the following commands:
 
 ```bash
 npm run tauri init
