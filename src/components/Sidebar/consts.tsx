@@ -47,10 +47,10 @@ export const MenuItems = [
 export const PlaylistItems = [
   {
     title: 'Chill n stuff',
-    href: '/',
+    href: '/playlist',
   },
   {
     title: 'Rock n roll',
-    href: '/',
+    href: '/playlist',
   },
 ];

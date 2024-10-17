@@ -8,11 +8,16 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Root from './routes/root';
 import { ThemeProvider } from './components/Theme/theme-provider';
 import Sidebar from './components/Sidebar';
+import Playlist from './routes/playlist';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
+  },
+  {
+    path: '/playlist',
+    element: <Playlist />,
   },
 ]);
 
