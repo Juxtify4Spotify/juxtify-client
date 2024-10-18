@@ -2,7 +2,7 @@ import Dot from '../../../assets/icons/dot.svg?react';
 import Play from '../../../assets/icons/play.svg?react';
 import Shuffle from '../../../assets/icons/shuffle.svg?react';
 import Add from '../../../assets/icons/add.svg?react';
-import AddPlaylist from '../../../assets/icons/add-playlist.svg?react';
+import AddQueue from '../../../assets/icons/add-queue.svg?react';
 import Download from '../../../assets/icons/download.svg?react';
 import Share from '../../../assets/icons/share.svg?react';
 import More from '../../../assets/icons/more.svg?react';
@@ -41,16 +41,16 @@ export default function PlaylistHeader({
   const toggleDownload = () => setIsDownloaded(!isDownloaded);
 
   return (
-    <div className='flex w-3/4 flex-col gap-4 p-8 text-foreground'>
+    <div className='flex flex-col gap-4 p-8 text-foreground'>
       <h1 className='text-5xl font-semibold'>{title}</h1>
-      <p className='mt-2 flex items-center gap-3 whitespace-nowrap font-thin'>
+      <div className='mt-2 flex items-center gap-3 whitespace-nowrap font-thin'>
         <p>
           By <strong>{userName}</strong>
         </p>
         <Dot className='inline' />
         {size} songs <Dot className='inline' />
         {time}
-      </p>
+      </div>
       <div className='flex h-14 gap-3'>
         <button onClick={togglePlay} className='w-10 text-accent'>
           {isPlaying ? <Pause className='size-10' /> : <Play className='size-10' />}
@@ -65,7 +65,7 @@ export default function PlaylistHeader({
         </button>
 
         <button>
-          <AddPlaylist />
+          <AddQueue />
         </button>
 
         <button onClick={toggleDownload} className={`${isDownloaded ? 'text-accent' : ''}`}>

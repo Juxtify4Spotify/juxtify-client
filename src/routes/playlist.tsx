@@ -22,15 +22,18 @@ function Playlist() {
         background: `linear-gradient(to bottom, ${bgColor}, black)`,
       }}
     >
-      <PlaylistHeader
-        title={playlist.title}
-        size={playlist.size}
-        downloded={playlist.downloded}
-        userName={playlist.userName}
-        inLibrary={playlist.inLibrary}
-        playing={playlist.playing}
-        time={playlist.time}
-      ></PlaylistHeader>
+      <section className='flex w-3/4 flex-col'>
+        <PlaylistHeader
+          title={playlist.title}
+          size={playlist.size}
+          downloded={playlist.downloded}
+          userName={playlist.userName}
+          inLibrary={playlist.inLibrary}
+          playing={playlist.playing}
+          time={playlist.time}
+        ></PlaylistHeader>
+      </section>
+
       <SideInfo img={playlist.img} tags={playlist.tags}></SideInfo>
     </div>
   );
