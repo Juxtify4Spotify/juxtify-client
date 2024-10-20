@@ -6,7 +6,7 @@ interface SideInfoProps {
 
 export default function SideInfo({ img, tags }: SideInfoProps) {
   return (
-    <aside className='flex h-full w-1/4 flex-col gap-8 p-5'>
+    <aside className='hidden h-full w-1/4 flex-col gap-8 p-5 sm:flex'>
       <img className='rounded-md' src={img} alt='playlist cover' />
       <div className='flex flex-wrap gap-4'>
         {tags.map((tag) => (
