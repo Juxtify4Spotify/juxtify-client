@@ -22,7 +22,7 @@ function Playlist() {
         background: `linear-gradient(to bottom, ${bgColor}, black)`,
       }}
     >
-      <section className='flex w-3/4 flex-col'>
+      <section className='flex w-full flex-col sm:w-3/4'>
         <PlaylistHeader
           title={playlist.title}
           size={playlist.size}
