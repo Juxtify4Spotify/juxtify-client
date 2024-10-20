@@ -43,7 +43,7 @@ export default function PlaylistHeader({
   const toggleDownload = () => setIsDownloaded(!isDownloaded);
 
   return (
-    <div className='flex flex-col gap-4 p-8 text-secondary-foreground'>
+    <div className='flex w-full flex-col gap-4 text-secondary-foreground'>
       <h1 className='text-lg font-semibold text-foreground sm:text-5xl'>{title}</h1>
       <div className='flex items-center gap-3 whitespace-nowrap sm:mt-2'>
         <p>
@@ -65,7 +65,7 @@ export default function PlaylistHeader({
           </button>
         </div>
 
-        <div className='flex gap-3'>
+        <div className='flex -translate-x-2 gap-3 sm:-translate-x-0'>
           <button onClick={toggleLibrary} className='hidden sm:inline'>
             {isInLibrary ? (
               <CheckFilled className='text-accent' />
