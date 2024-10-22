@@ -45,14 +45,14 @@ export default function PlaylistItem({
   return (
     <div className='group flex items-center gap-4 rounded-md py-2.5 text-sm text-secondary-foreground duration-100 ease-in-out hover:bg-gray-500/10'>
       {isPlayed ? ( // If is playing, show pause button
-        <div className='flex items-center px-2'>
+        <div className='hidden items-center px-2 sm:flex'>
           <button className='text-accent' onClick={togglePlayed}>
             <Pause className='h-10 w-10'></Pause>
           </button>
         </div>
       ) : (
         // If is not playing, show play button only when parent hover
-        <div className='flex items-center px-2'>
+        <div className='hidden items-center px-2 sm:flex'>
           <button className='hidden text-accent group-hover:inline' onClick={togglePlayed}>
             <Play className='h-10 w-10'></Play>
           </button>
@@ -62,24 +62,27 @@ export default function PlaylistItem({
         </div>
       )}
 
-      <div className='flex h-12 w-4/12 min-w-36 gap-4'>
+      <div className='flex h-12 w-5/6 min-w-36 gap-4 sm:w-4/12'>
         <img src={img} alt='Song cover' className='h-12 w-12' />
         <div className='flex flex-col gap-1 overflow-x-hidden'>
           <h2 className='truncate font-medium text-foreground'>{title}</h2>
           <p className='truncate'>{author}</p>
         </div>
       </div>
-      <p className='w-3/12 min-w-36 truncate'>{album}</p>
+      <p className='hidden w-3/12 min-w-36 truncate sm:inline'>{album}</p>
 
       {/* group of hidden buttons */}
-      <div className='flex w-5/12 items-center justify-between'>
-        <p>{duration}</p>
+      <div className='flex w-5/12 items-center justify-end sm:justify-between'>
+        <p className='hidden sm:inline'>{duration}</p>
 
-        <button onClick={toggleLike} className='ml-6 mr-2 w-min hover:text-foreground'>
+        <button
+          onClick={toggleLike}
+          className='ml-6 mr-2 hidden w-min hover:text-foreground sm:inline'
+        >
           {isLiked ? <LikeFilled className='text-accent' /> : <Like />}
         </button>
-        <div className='invisible flex gap-2 group-hover:visible'>
-          <button className='hover:text-foreground'>
+        <div className='visible flex gap-2 group-hover:visible sm:invisible'>
+          <button className='hidden hover:text-foreground sm:inline'>
             <AddPlaylist />
           </button>
           <button className='hover:text-foreground'>
@@ -93,7 +96,7 @@ export default function PlaylistItem({
         ) : (
           <button
             onClick={toggleSelected}
-            className='invisible ml-auto px-2 hover:text-foreground group-hover:visible'
+            className='ml-auto hidden px-2 hover:text-foreground group-hover:visible sm:invisible sm:inline'
           >
             <Check></Check>
           </button>

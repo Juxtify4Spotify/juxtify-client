@@ -13,8 +13,8 @@ interface SonglistProps {
 
 export default function SongList({ songs }: SonglistProps) {
   return (
-    <div className='py-3'>
-      <div className='mb-4 flex gap-4 border-b-2 border-gray-500/50 py-2 text-sm text-secondary-foreground'>
+    <div className='p-0 sm:p-3'>
+      <div className='mb-4 hidden gap-4 border-b-2 border-gray-500/50 py-2 text-sm text-secondary-foreground sm:flex'>
         <div className='flex items-center px-2'>
           <p className='w-10 text-center'>#</p>
         </div>
