@@ -94,7 +94,7 @@ export default function PlaylistHeader({
           </button>
         </div>
         {/* Search bar */}
-        <div className='fixed left-0 top-0 m-2 flex w-full justify-center sm:relative sm:right-0 sm:m-0'>
+        <div className='fixed left-0 top-2 flex w-full justify-center sm:relative sm:right-0'>
           <div className='sm:4/4 flex w-3/4 rounded-md bg-gray-500/20 px-4 sm:w-full sm:bg-transparent sm:px-0'>
             <input
               type='text'

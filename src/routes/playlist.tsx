@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import PlaylistHeader from '../components/Playlist/PlaylistHeader';
 import SideInfo from '../components/Playlist/SideInfo';
 import SongList from '../components/Playlist/SongList';
@@ -55,46 +55,18 @@ const playlist = {
 };
 
 function Playlist() {
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 640);
-    };
-
-    window.addEventListener('resize', handleResize);
-    handleResize();
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
   return (
     <div
-      className='flex h-full gap-6 rounded-md p-4 sm:p-8'
+      className='flex h-full flex-col gap-6 rounded-md p-4 sm:flex-row-reverse sm:p-8'
       style={{
         background: `linear-gradient(to bottom, ${bgColor}, black)`,
       }}
     >
-      {isSmallScreen ? (
-        <>
-          <section className='flex flex-col gap-6'>
-            <Aside></Aside>
-
-            <Header></Header>
-            <SongList songs={playlist.songs}></SongList>
-          </section>
-        </>
-      ) : (
-        <>
-          <section className='flex w-4/5 flex-col'>
-            <Header></Header>
-            <SongList songs={playlist.songs}></SongList>
-          </section>
-          <Aside></Aside>
-        </>
-      )}
+      <SideInfo img={playlist.img} tags={playlist.tags}></SideInfo>
+      <section className='flex w-full flex-col sm:w-4/5'>
+        <Header></Header>
+        <SongList songs={playlist.songs}></SongList>
+      </section>
     </div>
   );
 }
@@ -110,7 +82,5 @@ const Header = () => (
     time={playlist.time}
   ></PlaylistHeader>
 );
-
-const Aside = () => <SideInfo img={playlist.img} tags={playlist.tags}></SideInfo>;
 
 export default Playlist;
